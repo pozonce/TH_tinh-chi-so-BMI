@@ -1,22 +1,26 @@
 <?php
-class Person {
+class Person
+{
     public $name;
     public $age;
     public $gender;
     public $height;
     public $weight;
-    public function __construct($name, $age, $gender, $height, $weight) {
+    public function __construct($name, $age, $gender, $height, $weight)
+    {
         $this->name = $name;
         $this->age = $age;
         $this->gender = $gender;
         $this->height = $height;
         $this->weight = $weight;
     }
-    public function getBMI() {
+    public function getBMI()
+    {
         $bmi = $this->weight / ($this->height * $this->height);
         return round($bmi, 1);
     }
-    public function getCategory() {
+    public function getCategory()
+    {
         $bmi = $this->getBMI();
         if ($bmi < 18.5) {
             return "Gầy";
@@ -49,4 +53,3 @@ foreach ($persons as $person) {
     echo "Chỉ số BMI: " . $person->getBMI() . "<br>";
     echo "Phân loại BMI: " . $person->getCategory() . "<br><br>";
 }
-?>
